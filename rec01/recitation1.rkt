@@ -203,10 +203,7 @@ if @racket[v] is @racket[d] meters away from an intersection which has just chan
  @item{What do we expect @racket[(safe-to-scroll v l d)] to be when the vehicle will not enter the intersection before it switches?}
  ]
 
-@emph{HINT:} Consider defining a helper function to determine if the vehicle will enter the inters> after the work-stealing opsem (\figref{fig:ws-step}) is introduced, i.e. near
-> the end of \secref{sec:ws-semantics} or as the closing subsection of
-> \secref{sec:ws}. Notation follows `macros.tex`. Mechanized counterparts are
-> noted in `% Lean:` comments against `SpaceBound/Deque.lean`.ection before the light switches.
+@emph{HINT:} Consider defining a helper function to determine if the vehicle will enter the intersection after or before the light switches.
 
 @chunk[<safe-to-scroll>
        (check-expect #true #true)
