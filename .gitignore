@@ -1,0 +1,30 @@
+# Racket bytecode
+compiled/
+
+# Scribble HTML output (DrRacket "Scribble HTML")
+*.html
+scribble.css
+scribble-style.css
+scribble-common.js
+racket.css
+manual-*.css
+manual-*.js
+doc-site.css
+doc-site.js
+
+# Scribble PDF/LaTeX output (DrRacket "Scribble PDF")
+*.pdf
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+scribble.tex
+scribble-load-replace.tex
+
+# OS / editor
+.DS_Store
+*~
