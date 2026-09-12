@@ -11,9 +11,9 @@ In DrRacket:
 
 ## Schedule
 
-| #   | Topic                                                                                 | Handout                                  | Solutions                 |
-| --- | ------------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------- |
-| 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt) | _posted after recitation_ |
+| #   | Topic                                                                                 | Handout                                  | Solutions                                                    |
+| --- | ------------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------ |
+| 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt) | [recitation1-solutions.rkt](rec01/recitation1-solutions.rkt) |
 
 ## How these files work
 
