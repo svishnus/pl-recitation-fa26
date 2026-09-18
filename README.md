@@ -14,6 +14,7 @@ In DrRacket:
 | #   | Topic                                                                                 | Handout                                  | Solutions                                                    |
 | --- | ------------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------ |
 | 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt) | [recitation1-solutions.rkt](rec01/recitation1-solutions.rkt) |
+| 2   | Boolean expressions: structs, writing an interpreter, and optimizations               | [recitation2.rkt](rec02/recitation2.rkt) | _after recitation_                                           |
 
 ## How these files work
 
