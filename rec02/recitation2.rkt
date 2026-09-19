@@ -17,6 +17,7 @@
        <bexp-opt>
        <demorgan-opt-check>
        <demorgan-opt>
+       <demorgan-opt-syn-test>
        <demorgan-opt-test>
        (test)
        ]
@@ -75,7 +76,8 @@ Write your tests here:
 
 @chunk[<bexp-interp-tests>
        (check-expect (evaluate-bexp (leaf-node #t)) 'TODO)
-       (check-expect (evaluate-bexp (and-node (leaf-node #t) (leaf-node #f))) 'TODO)]
+       (check-expect (evaluate-bexp (and-node (leaf-node #t) (leaf-node #f))) 'TODO)
+       (check-expect (evaluate-bexp (and-node (leaf-node #f) (leaf-node #t))) 'TODO)]
 
 What happens when you miss cases in the pattern match?
 
@@ -152,9 +154,10 @@ consider what it means for @racket[demorgan-opt] to be correct and how to check.
 }
 
 @chunk[<demorgan-opt-check>
-       (define (preserves-sem? unopt opt) 'TODO)
-       (define (is-optimizing? unopt opt) 'TODO)
-       (define (is-correct? unopt opt) (and (preserves-sem? unopt opt) (is-optimizing? unopt opt)))]
+       (define (preserves-sem? unopt) 'TODO)
+       (define (is-optimizing? opt) 'TODO)
+       (define (is-correct? unopt)
+         (and (preserves-sem? unopt) (is-optimizing? (demorgan-opt unopt))))]
 
 @exercise{Optimizing with De Morgan's Law}
 Define a function to perform this optimization pass.
@@ -173,5 +176,25 @@ You will need more cases than we used in @racket[evaluate-bexp].
 
 Test your optimization pass using the test functions you defined above.
 
+@chunk[<demorgan-opt-syn-test>
+       (check-expect (syn-equal? (demorgan-opt bexp-1) bexp-1-opt) 'TODO)
+       (check-expect (syn-equal? (demorgan-opt bexp-2) bexp-2-opt) 'TODO)
+       (check-expect (syn-equal? (demorgan-opt bexp-3) bexp-3-opt) 'TODO)]
+
 @chunk[<demorgan-opt-test>
-       (check-expect (is-correct? bexp-1 (demorgan-opt bexp-1)) 'TODO)]
+       (define bexp-4
+         (not-node
+          (or-node
+           (not-node (leaf-node #t))
+           (leaf-node #f))))
+       (define bexp-5
+         (or-node
+          (not-node (not-node (leaf-node #t)))
+          (not-node (leaf-node #f))))
+       (define bexp-6
+         (or-node
+          (leaf-node #t)
+          (not-node (leaf-node #t))))
+       (check-expect (is-correct? bexp-4) 'TODO)
+       (check-expect (is-correct? bexp-5) 'TODO)
+       (check-expect (is-correct? bexp-6) 'TODO)]
