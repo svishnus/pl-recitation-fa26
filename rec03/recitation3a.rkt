@@ -40,10 +40,14 @@
 
 ;; Discussion: what do the types buy us?
 ;;
-;; (a) Uncomment the line below and press Run. When do you get the error,
-;;     and how does that compare to building (leaf-node 's) last week?
+;; (a) Last week we built bexp-sym-1 = (and-node (leaf-node 'x) (leaf-node 'y)).
+;;     What does last week's evaluate-bexp return on it? Is that a boolean?
+;;
+;;     Now uncomment the typed version below and press Run. What happens,
+;;     and when?
 
-; (evaluate-bexp-b (and-node-b (leaf-node-b #t) (leaf-node-b 's)))
+;      (evaluate-bexp-b (and-node-b (leaf-node-b 'x) (leaf-node-b 'y)))
+
 
 ;; (b) Last week, evaluate-bexp-m missed cases and only failed when we
 ;;     called it on a non-leaf. Uncomment evaluate-bexp-b-m and press Run.
@@ -94,6 +98,7 @@
 
 ;; Note that we don't need syn-equal? anymore: test compares define-type
 ;; values structurally.
+;; test is plai-typed's version of check-expect
 (test (demorgan-opt bexp-1) (and-node (leaf-node 'P) (not-node (leaf-node 'Q))))
 (test (demorgan-opt bexp-2) (or-node (leaf-node 'P) (not-node (leaf-node 'Q))))
 (test (demorgan-opt bexp-3) (or-node (leaf-node 'P) (not-node (leaf-node 'Q))))
