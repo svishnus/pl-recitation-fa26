@@ -43,3 +43,6 @@ comments rather than Scribble handouts, so there's no HTML/PDF version — just 
 3. Press **Run**. You should see `"Hello, world!"` in the interactions pane — then you're set.
 4. From recitation 3 on, you'll also need `plai-typed`. In DrRacket, go to
    **File → Install Package…** and enter `plai-typed`, or run `raco pkg install plai-typed`.
+   To check it worked, open [rec03/recitation3a.rkt](rec03/recitation3a.rkt) and press **Run**.
+   If you see test failures that say `TODO`, you're set. If you see
+   `collection not found`, the package isn't installed.
