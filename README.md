@@ -15,6 +15,8 @@ In DrRacket:
 | --- | ------------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------ |
 | 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt) | [recitation1-solutions.rkt](rec01/recitation1-solutions.rkt) |
 | 2   | Boolean expressions: structs, writing an interpreter, and optimizations               | [recitation2.rkt](rec02/recitation2.rkt) | [recitation2-solutions.rkt](rec02/recitation2-solutions.rkt) |
+| 3a  | Typed boolean expressions in `plai-typed`: `define-type`, `type-case`, exhaustiveness | [recitation3a.rkt](rec03/recitation3a.rkt) | _after recitation_                                             |
+| 3b  | Pattern matching: literals, wildcards, and destructuring lists                        | [recitation3b.rkt](rec03/recitation3b.rkt) | _after recitation_                                             |
 
 ## How these files work
 
@@ -30,8 +32,14 @@ recNN/
   recitationN-solutions.rkt  # posted after recitation
 ```
 
+Some weeks are split into parts (`recitationNa.rkt`, `recitationNb.rkt`, each with its own
+solutions file). Parts written in `#lang plai-typed` (e.g. 3a) are plain Racket files with
+comments rather than Scribble handouts, so there's no HTML/PDF version — just open and **Run**.
+
 ## Setup
 
 1. Install [Racket](https://download.racket-lang.org/) (DrRacket ships with it).
 2. Open the handout in DrRacket, e.g. [rec01/recitation1.rkt](rec01/recitation1.rkt).
 3. Press **Run**. You should see `"Hello, world!"` in the interactions pane — then you're set.
+4. From recitation 3 on, you'll also need `plai-typed`. In DrRacket, go to
+   **File → Install Package…** and enter `plai-typed`, or run `raco pkg install plai-typed`.
