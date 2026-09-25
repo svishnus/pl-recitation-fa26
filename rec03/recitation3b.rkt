@@ -33,10 +33,10 @@ Here's a simple example with two patterns, which a single @racket[if] could also
            [0 1]
            [_ (* x (factorial (- x 1)))]))
 
-       (define (factorial2 x)
+       (define (factorial-if x)
          (if (= x 0)
              1
-             (* x (factorial2 (- x 1)))))]
+             (* x (factorial-if (- x 1)))))]
 
 The pattern @racket[_] is a @emph{wildcard}: it matches anything and binds nothing.
 
@@ -44,15 +44,15 @@ The more cases there are, the more concise @racket[match] gets compared with @ra
 Here's Fibonacci written with nested @racket[if]s:
 
 @chunk[<fibonacci-if>
-       (define (fibonacci2 x)
+       (define (fibonacci-if x)
          (if (= x 0)
              0
              (if (= x 1)
                  1
-                 (+ (fibonacci2 (- x 1)) (fibonacci2 (- x 2))))))]
+                 (+ (fibonacci-if (- x 1)) (fibonacci-if (- x 2))))))]
 
 @exercise{Fibonacci with @racket[match]}
-Rewrite @racket[fibonacci2] using @racket[match].
+Rewrite @racket[fibonacci-if] using @racket[match].
 
 @chunk[<fibonacci>
        (define (fibonacci x)
@@ -61,7 +61,7 @@ Rewrite @racket[fibonacci2] using @racket[match].
 @chunk[<fibonacci-tests>
        (check-expect (fibonacci 1) 'TODO)
        (check-expect (fibonacci 10) 'TODO)
-       (check-expect (fibonacci 10) (fibonacci2 10))]
+       (check-expect (fibonacci 10) (fibonacci-if 10))]
 
 @exercise{What is @racket[else]?}
 You'll often see @racket[[else ...]] as the last clause of a @racket[match].
@@ -70,6 +70,11 @@ Predict what this evaluates to, then run it.
 
 @chunk[<else-gotcha>
        (check-expect (match 5 [else else]) 'TODO)]
+
+@nested[#:style 'inset]{
+ Discuss with your neighbors: why do you get that result?
+ What is @racket[else] bound to inside the clause?
+}
 
 @section{Destructuring lists}
 Patterns can also take apart lists. Here are two ways to grab the third element of a list:
