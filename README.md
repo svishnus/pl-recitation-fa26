@@ -1,13 +1,15 @@
 # Programming Languages — Recitations (Fall 2026)
 
-Recitation handouts are written as [Scribble](https://docs.racket-lang.org/scribble/index.html)
-literate programs (`#lang scribble/lp2`), so each file is both the handout you read and
-the program you run.
+Each handout is a single `.rkt` file you open in DrRacket and **Run**. Running it executes
+the code, including the tests.
 
-In DrRacket:
+From recitation 3 on, most handouts are written in `#lang plai-typed`. These are plain
+Racket files with comments, so you read them in the editor.
 
-- **Run** — executes the code chunks (including the `check-expect` tests).
-- **Scribble HTML/PDF** — renders the handout with clickable links to the Racket docs.
+A few untyped handouts (recitations 1, 2, and 3b) are
+[Scribble](https://docs.racket-lang.org/scribble/index.html) literate programs
+(`#lang scribble/lp2`). For these, the **Scribble HTML/PDF** button also renders the
+handout as a page with clickable links to the Racket docs.
 
 ## Schedule
 
@@ -33,8 +35,7 @@ recNN/
 ```
 
 Some weeks are split into parts (`recitationNa.rkt`, `recitationNb.rkt`, each with its own
-solutions file). Parts written in `#lang plai-typed` (e.g. 3a) are plain Racket files with
-comments rather than Scribble handouts, so there's no HTML/PDF version — just open and **Run**.
+solutions file).
 
 ## Setup
 
