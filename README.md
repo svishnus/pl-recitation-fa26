@@ -15,8 +15,8 @@ In DrRacket:
 | --- | ------------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------ |
 | 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt) | [recitation1-solutions.rkt](rec01/recitation1-solutions.rkt) |
 | 2   | Boolean expressions: structs, writing an interpreter, and optimizations               | [recitation2.rkt](rec02/recitation2.rkt) | [recitation2-solutions.rkt](rec02/recitation2-solutions.rkt) |
-| 3a  | Typed boolean expressions in `plai-typed`: `define-type`, `type-case`, exhaustiveness | [recitation3a.rkt](rec03/recitation3a.rkt) | _after recitation_                                             |
-| 3b  | Pattern matching: literals, wildcards, and destructuring lists                        | [recitation3b.rkt](rec03/recitation3b.rkt) | _after recitation_                                             |
+| 3a  | Typed boolean expressions in `plai-typed`: `define-type`, `type-case`, exhaustiveness | [recitation3a.rkt](rec03/recitation3a.rkt) | [recitation3a-solutions.rkt](rec03/recitation3a-solutions.rkt) |
+| 3b  | Pattern matching: literals, wildcards, and destructuring lists                        | [recitation3b.rkt](rec03/recitation3b.rkt) | [recitation3b-solutions.rkt](rec03/recitation3b-solutions.rkt) |
 
 ## How these files work
 
