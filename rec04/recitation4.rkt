@@ -21,16 +21,16 @@
 ;; Let us define a type for patterns, and extend our ArithE type with them.
 
 (define-type PatternE
-             [numP (n : number) (e : ArithE)]
-             [anyP (e : ArithE)])
+  [numP (n : number) (e : ArithE)]
+  [anyP (e : ArithE)])
 
 (define-type ArithE
-             [numC (n : number)]
-             [plusC (e1 : ArithE) (e2 : ArithE)]
-             [timesC (e1 : ArithE) (e2 : ArithE)]
-             [letC (x : symbol) (e1 : ArithE) (e2 : ArithE)]
-             [idC (x : symbol)]
-             [patternC (e : ArithE) (patterns : (listof PatternE))])
+  [numC (n : number)]
+  [plusC (e1 : ArithE) (e2 : ArithE)]
+  [timesC (e1 : ArithE) (e2 : ArithE)]
+  [letC (x : symbol) (e1 : ArithE) (e2 : ArithE)]
+  [idC (x : symbol)]
+  [patternC (e : ArithE) (patterns : (listof PatternE))])
 
 ; Example: match 5 with
 ;         | 5 -> 0
@@ -38,10 +38,10 @@
 ; Expected: 0
 (define example-1 : ArithE
   (patternC
-    (numC 5)
-    (list
-      (numP 5 (numC 0))
-      (numP 6 (numC 1)))))
+   (numC 5)
+   (list
+    (numP 5 (numC 0))
+    (numP 6 (numC 1)))))
 
 ; Example: match (1 + 2) with
 ;         | 3 -> 1
@@ -49,10 +49,10 @@
 ; Expected: 1
 (define example-2 : ArithE
   (patternC
-    (plusC (numC 1) (numC 2))
-    (list
-      (numP 3 (numC 1))
-      (anyP (idC 'x)))))
+   (plusC (numC 1) (numC 2))
+   (list
+    (numP 3 (numC 1))
+    (anyP (idC 'x)))))
 
 ; Example: match x with
 ;         | 0 -> z
@@ -62,14 +62,14 @@
 ; Expected: unbound variable!
 (define example-3 : ArithE
   (patternC
-    (idC 'x)
-    (list
-      (numP 0 (idC 'z))
-      (anyP (patternC
-              (idC 'y)
-              (list
-                (numP 0 (idC 'x))
-                (numP 1 (idC 'y))))))))
+   (idC 'x)
+   (list
+    (numP 0 (idC 'z))
+    (anyP (patternC
+           (idC 'y)
+           (list
+            (numP 0 (idC 'x))
+            (numP 1 (idC 'y))))))))
 
 ; Example: let x = 1 in
 ;            let y = 1 in
@@ -81,20 +81,20 @@
 ; Expected: 2
 (define example-4 : ArithE
   (letC
-    'x
+   'x
+   (numC 1)
+   (letC
+    'y
     (numC 1)
-    (letC
-      'y
-      (numC 1)
-      (patternC
-        (idC 'x)
-        (list
-          (numP 0 (idC 'z))
-          (anyP (patternC
-                  (idC 'y)
-                  (list
-                    (numP 0 (idC 'x))
-                    (numP 1 (plusC (numC 1) (idC 'y)))))))))))
+    (patternC
+     (idC 'x)
+     (list
+      (numP 0 (idC 'z))
+      (anyP (patternC
+             (idC 'y)
+             (list
+              (numP 0 (idC 'x))
+              (numP 1 (plusC (numC 1) (idC 'y)))))))))))
 
 ;; 2. Parsing
 ;; Next, let's parse pattern matching expressions.
@@ -135,24 +135,24 @@
 
 (define (subst-pattern (erep : ArithE) (x : symbol)) : (PatternE -> PatternE)
   (lambda (p) (type-case PatternE p
-                         [numP (n e) (error 'subst-pattern "TODO")]
-                         [anyP (e) (error 'subst-pattern "TODO")])))
+                [numP (n e) (error 'subst-pattern "TODO")]
+                [anyP (e) (error 'subst-pattern "TODO")])))
 
 ; Use the subst-pattern function to implement subst for patternC. Hint: use map!
 
 (define (subst (erep : ArithE) (x : symbol) (e : ArithE)) : ArithE
   (type-case ArithE e
-             [idC (y) (if (equal? x y) erep (idC y))]
-             [numC (n) (numC n)]
-             [plusC (e1 e2) (plusC (subst erep x e1) (subst erep x e2))]
-             [timesC (e1 e2) (timesC (subst erep x e1) (subst erep x e2))]
-             [patternC (e pats) (error 'subst "TODO")]
-             [letC (y e1 e2)
-              (cond
-                [(equal? x y) (letC y (subst erep x e1) e2)]
-                [else
-                 (let [(z (gensym))]
-                   (letC z (subst erep x e1) (subst erep x (subst (idC z) y e2))))])]))
+    [idC (y) (if (equal? x y) erep (idC y))]
+    [numC (n) (numC n)]
+    [plusC (e1 e2) (plusC (subst erep x e1) (subst erep x e2))]
+    [timesC (e1 e2) (timesC (subst erep x e1) (subst erep x e2))]
+    [patternC (e pats) (error 'subst "TODO")]
+    [letC (y e1 e2)
+          (cond
+            [(equal? x y) (letC y (subst erep x e1) e2)]
+            [else
+             (let [(z (gensym))]
+               (letC z (subst erep x e1) (subst erep x (subst (idC z) y e2))))])]))
 
 ;; 4. Evaluation
 ;; Finally, let's extend the eval function to evaluate pattern-matching.
@@ -169,15 +169,15 @@
 
 (define (eval (e : ArithE)) : number
   (type-case ArithE e
-             [numC (n) n]
-             [plusC (e1 e2) (+ (eval e1) (eval e2))]
-             [timesC (e1 e2) (* (eval e1) (eval e2))]
-             [patternC (e pats) (error 'eval "TODO")]
-             [letC (x e1 e2)
-              (eval (subst e1 x e2))
-              ]
-             [idC (x) (error 'eval "unbound variable!")]
-             )
+    [numC (n) n]
+    [plusC (e1 e2) (+ (eval e1) (eval e2))]
+    [timesC (e1 e2) (* (eval e1) (eval e2))]
+    [patternC (e pats) (error 'eval "TODO")]
+    [letC (x e1 e2)
+          (eval (subst e1 x e2))
+          ]
+    [idC (x) (error 'eval "unbound variable!")]
+    )
   )
 
 (test (eval (parse example-1-sexp)) 0)
