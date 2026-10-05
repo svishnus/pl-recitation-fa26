@@ -11,14 +11,17 @@ A few untyped handouts (recitations 1, 2, and 3b) are
 (`#lang scribble/lp2`). For these, the **Scribble HTML/PDF** button also renders the
 handout as a page with clickable links to the Racket docs.
 
+Recitation 4 also has a [Lean 4](https://lean-lang.org/) file, [rec04/bexp.lean](rec04/bexp.lean). See [Setup](#setup) for how to open it.
+
 ## Schedule
 
-| #   | Topic                                                                                 | Handout                                  | Solutions                                                    |
-| --- | ------------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------ |
-| 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt) | [recitation1-solutions.rkt](rec01/recitation1-solutions.rkt) |
-| 2   | Boolean expressions: structs, writing an interpreter, and optimizations               | [recitation2.rkt](rec02/recitation2.rkt) | [recitation2-solutions.rkt](rec02/recitation2-solutions.rkt) |
-| 3a  | Typed boolean expressions in `plai-typed`: `define-type`, `type-case`, exhaustiveness | [recitation3a.rkt](rec03/recitation3a.rkt) | [recitation3a-solutions.rkt](rec03/recitation3a-solutions.rkt) |
-| 3b  | Pattern matching: literals, wildcards, and destructuring lists                        | [recitation3b.rkt](rec03/recitation3b.rkt) | [recitation3b-solutions.rkt](rec03/recitation3b-solutions.rkt) |
+| #   | Topic                                                                                 | Handout                                                                | Solutions                                                      |
+| --- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------- |
+| 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt)                               | [recitation1-solutions.rkt](rec01/recitation1-solutions.rkt)   |
+| 2   | Boolean expressions: structs, writing an interpreter, and optimizations               | [recitation2.rkt](rec02/recitation2.rkt)                               | [recitation2-solutions.rkt](rec02/recitation2-solutions.rkt)   |
+| 3a  | Typed boolean expressions in `plai-typed`: `define-type`, `type-case`, exhaustiveness | [recitation3a.rkt](rec03/recitation3a.rkt)                             | [recitation3a-solutions.rkt](rec03/recitation3a-solutions.rkt) |
+| 3b  | Pattern matching: literals, wildcards, and destructuring lists                        | [recitation3b.rkt](rec03/recitation3b.rkt)                             | [recitation3b-solutions.rkt](rec03/recitation3b-solutions.rkt) |
+| 4   | Adding pattern matching to the interpreter; boolean expressions and proofs in Lean    | [recitation4.rkt](rec04/recitation4.rkt), [bexp.lean](rec04/bexp.lean) | [recitation4-solutions.rkt](rec04/recitation4-solutions.rkt)   |
 
 ## How these files work
 
@@ -47,3 +50,7 @@ solutions file).
    To check it worked, open [rec03/recitation3a.rkt](rec03/recitation3a.rkt) and press **Run**.
    If you see test failures that say `TODO`, you're set. If you see
    `collection not found`, the package isn't installed.
+5. For the Lean file in recitation 4, you don't need to install anything. Open
+   [live.lean-lang.org](https://live.lean-lang.org/) in your browser and paste in the contents
+   of [rec04/bexp.lean](rec04/bexp.lean). The panel on the right shows the output of `#eval`
+   and the proof state as you move your cursor through the file.
