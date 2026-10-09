@@ -22,6 +22,7 @@ Recitation 4 also has a [Lean 4](https://lean-lang.org/) file, [rec04/bexp.lean]
 | 3a  | Typed boolean expressions in `plai-typed`: `define-type`, `type-case`, exhaustiveness | [recitation3a.rkt](rec03/recitation3a.rkt)                             | [recitation3a-solutions.rkt](rec03/recitation3a-solutions.rkt) |
 | 3b  | Pattern matching: literals, wildcards, and destructuring lists                        | [recitation3b.rkt](rec03/recitation3b.rkt)                             | [recitation3b-solutions.rkt](rec03/recitation3b-solutions.rkt) |
 | 4   | Adding pattern matching to the interpreter; boolean expressions and proofs in Lean    | [recitation4.rkt](rec04/recitation4.rkt), [bexp.lean](rec04/bexp.lean) | [recitation4-solutions.rkt](rec04/recitation4-solutions.rkt)   |
+| 5   | Environments as functions; static vs. dynamic scope                                   | [recitation5.rkt](rec05/recitation5.rkt)                               | _after recitation_                                             |
 
 ## How these files work
 
