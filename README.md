@@ -6,7 +6,7 @@ the code, including the tests.
 From recitation 3 on, most handouts are written in `#lang plai-typed`. These are plain
 Racket files with comments, so you read them in the editor.
 
-A few untyped handouts (recitations 1, 2, and 3b) are
+A few untyped handouts (recitations 1, 2, 3b, and the macro handout in 5) are
 [Scribble](https://docs.racket-lang.org/scribble/index.html) literate programs
 (`#lang scribble/lp2`). For these, the **Scribble HTML/PDF** button also renders the
 handout as a page with clickable links to the Racket docs.
@@ -15,15 +15,15 @@ Recitation 4 also has a [Lean 4](https://lean-lang.org/) file, [rec04/bexp.lean]
 
 ## Schedule
 
-| #   | Topic                                                                                 | Handout                                                                | Solutions                                                      |
-| --- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------- |
-| 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt)                               | [recitation1-solutions.rkt](rec01/recitation1-solutions.rkt)   |
-| 2   | Boolean expressions: structs, writing an interpreter, and optimizations               | [recitation2.rkt](rec02/recitation2.rkt)                               | [recitation2-solutions.rkt](rec02/recitation2-solutions.rkt)   |
-| 3a  | Typed boolean expressions in `plai-typed`: `define-type`, `type-case`, exhaustiveness | [recitation3a.rkt](rec03/recitation3a.rkt)                             | [recitation3a-solutions.rkt](rec03/recitation3a-solutions.rkt) |
-| 3b  | Pattern matching: literals, wildcards, and destructuring lists                        | [recitation3b.rkt](rec03/recitation3b.rkt)                             | [recitation3b-solutions.rkt](rec03/recitation3b-solutions.rkt) |
-| 4   | Adding pattern matching to the interpreter; boolean expressions and proofs in Lean    | [recitation4.rkt](rec04/recitation4.rkt), [bexp.lean](rec04/bexp.lean) | [recitation4-solutions.rkt](rec04/recitation4-solutions.rkt)   |
-| 5   | Environments as functions; static vs. dynamic scope                                   | [recitation5.rkt](rec05/recitation5.rkt)                               | [recitation5-solutions.rkt](rec05/recitation5-solutions.rkt)   |
-| 6   | Mutable state: boxes, the store, `set!`; tables as a language feature                 | [recitation6.rkt](rec06/recitation6.rkt)                               | _after recitation_                                             |
+| #   | Topic                                                                                 | Handout                                                                                                          | Solutions                                                      |
+| --- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| 1   | Functional programming in Racket, DrRacket, recursion, lists & higher-order functions | [recitation1.rkt](rec01/recitation1.rkt)                                                                         | [recitation1-solutions.rkt](rec01/recitation1-solutions.rkt)   |
+| 2   | Boolean expressions: structs, writing an interpreter, and optimizations               | [recitation2.rkt](rec02/recitation2.rkt)                                                                         | [recitation2-solutions.rkt](rec02/recitation2-solutions.rkt)   |
+| 3a  | Typed boolean expressions in `plai-typed`: `define-type`, `type-case`, exhaustiveness | [recitation3a.rkt](rec03/recitation3a.rkt)                                                                       | [recitation3a-solutions.rkt](rec03/recitation3a-solutions.rkt) |
+| 3b  | Pattern matching: literals, wildcards, and destructuring lists                        | [recitation3b.rkt](rec03/recitation3b.rkt)                                                                       | [recitation3b-solutions.rkt](rec03/recitation3b-solutions.rkt) |
+| 4   | Adding pattern matching to the interpreter; boolean expressions and proofs in Lean    | [recitation4.rkt](rec04/recitation4.rkt), [bexp.lean](rec04/bexp.lean)                                           | [recitation4-solutions.rkt](rec04/recitation4-solutions.rkt)   |
+| 5   | Environments as functions; static vs. dynamic scope                                   | [recitation5.rkt](rec05/recitation5.rkt), [macro.rkt](rec05/macro.rkt), [unhygienic.c](rec05/unhygienic.c)       | [recitation5-solutions.rkt](rec05/recitation5-solutions.rkt)   |
+| 6   | Mutable state: boxes, the store, `set!`; tables as a language feature                 | [recitation6.rkt](rec06/recitation6.rkt), [arb.c](rec06/arb.c), [ltr.rkt](rec06/ltr.rkt), [rtl.ml](rec06/rtl.ml) | [recitation6-solutions.rkt](rec06/recitation6-solutions.rkt)   |
 
 ## How these files work
 
