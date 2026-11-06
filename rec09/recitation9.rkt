@@ -74,6 +74,8 @@ Racket remembers that work on its call stack, which grows with the depth of the 
 To watch it grow, run @racket[(trace interp-nt-lang-basic)] in the interactions window, then
 @racket[(interp-nt-lang-basic (parse-nt-exp '((3 (4 2)) (2 2))))].
 Each level of indentation is a call that hasn't returned yet.
+If you get a "cannot modify a constant" error, go to @bold{Language > Choose Language... > Show Details},
+uncheck @bold{Enforce constant definitions}, and click Run again.
 
 That works fine here, but the "work left to do" is hidden inside Racket,
 where our interpreter can't look at it. The lecture's @racket[find-handler] needs to look at it.
@@ -88,7 +90,15 @@ In continuation-passing style, we represent the state of our program as two thin
 @exercise{What are we working on?}
 @bold{Q1.} When we are interpreting an @nonterm{NT-lang} program, what are we "working on"?
 
+@nested[#:style 'inset]{
+ Your answer here.
+}
+
 @bold{Q2.} When we are interpreting an @nonterm{NT-lang} program, what might we have to "do with the result"?
+
+@nested[#:style 'inset]{
+ Your answer here.
+}
 
 @exercise{A CPS interpreter}
 The inner function @racket[interp-cps] takes the expression @racket[n] we are "working on"
@@ -114,11 +124,25 @@ Every call you make should be a tail call!
 The first call is @racket[(interp-cps (nt-add B C) (lambda (v) v))].
 Write out the second call to @racket[interp-cps], with its continuation written out in full.
 
+@nested[#:style 'inset]{
+ @racketblock[
+  (interp-cps ...)
+ ]
+}
+
 @bold{Q4.} Is @racket[interp-cps] tail recursive?
 Is it more efficient than @racket[interp-nt-lang-basic]?
 
+@nested[#:style 'inset]{
+ Your answer here.
+}
+
 @bold{Q5.} In @racket[interp-nt-lang-basic], the pending additions lived on the call stack.
 Where are they now?
+
+@nested[#:style 'inset]{
+ Your answer here.
+}
 
 @section{Defunctionalization}
 Our continuations are Racket functions, so the only thing we can do with one is call it.
@@ -133,6 +157,10 @@ The free variables of each @racket[lambda] become the fields of its case.
 @bold{Q6.} List every @racket[lambda] that your @racket[interp-nt-lang-cps] creates as a continuation
 (don't forget the initial one). For each, what are its free variables?
 What would you name it?
+
+@nested[#:style 'inset]{
+ Your answer here.
+}
 
 Compare your answer with ours:
 
@@ -186,8 +214,20 @@ corresponding @racket[lambda] did in @racket[interp-nt-lang-cps].
 @bold{Q7.} Are @racket[interp-kont] and @racket[interp-exp] tail recursive?
 Where are the pending additions now?
 
+@nested[#:style 'inset]{
+ Your answer here.
+}
+
 @bold{Q8.} Is there anything stopping you from writing this interpreter as a loop in a language without closures, like C?
+
+@nested[#:style 'inset]{
+ Your answer here.
+}
 
 @bold{Q9.} The lecture's @racket[find-handler] handles a @racket[raise] by walking along the continuation,
 skipping cases until it reaches a @racket[tryRK]. Why couldn't we do that with the
 continuations in @racket[interp-nt-lang-cps]?
+
+@nested[#:style 'inset]{
+ Your answer here.
+}
