@@ -6,7 +6,7 @@ the code, including the tests.
 From recitation 3 on, most handouts are written in `#lang plai-typed`. These are plain
 Racket files with comments, so you read them in the editor.
 
-A few untyped handouts (recitations 1, 2, 3b, 7, 8, and the macro handout in 5) are
+A few untyped handouts (recitations 1, 2, 3b, 7, 8, 9, and the macro handout in 5) are
 [Scribble](https://docs.racket-lang.org/scribble/index.html) literate programs
 (`#lang scribble/lp2`). For these, the **Scribble HTML/PDF** button also renders the
 handout as a page with clickable links to the Racket docs.
@@ -26,6 +26,7 @@ Recitation 4 also has a [Lean 4](https://lean-lang.org/) file, [rec04/bexp.lean]
 | 6   | Mutable state: boxes, the store, `set!`; tables as a language feature                 | [recitation6.rkt](rec06/recitation6.rkt), [arb.c](rec06/arb.c), [ltr.rkt](rec06/ltr.rkt), [rtl.ml](rec06/rtl.ml) | [recitation6-solutions.rkt](rec06/recitation6-solutions.rkt)   |
 | 7   | Recursion: tying the knot with boxes; the Y and Z combinators; `rec` via Z            | [recitation7.rkt](rec07/recitation7.rkt), [recitation7-interp.rkt](rec07/recitation7-interp.rkt)                 | [recitation7-solutions.rkt](rec07/recitation7-solutions.rkt), [recitation7-interp-solutions.rkt](rec07/recitation7-interp-solutions.rkt)   |
 | 8   | The lambda calculus: normal-order evaluation, Church booleans and numerals, Y         | [recitation8.rkt](rec08/recitation8.rkt)                                                                         | [recitation8-solutions.rkt](rec08/recitation8-solutions.rkt)                                                                                                                         |
+| 9   | CPS and defunctionalization: continuations as functions, then as data                 | [recitation9.rkt](rec09/recitation9.rkt)                                                                         | _after recitation_                                                                                                                         |
 
 ## How these files work
 
