@@ -27,6 +27,7 @@ Recitation 4 also has a [Lean 4](https://lean-lang.org/) file, [rec04/bexp.lean]
 | 7   | Recursion: tying the knot with boxes; the Y and Z combinators; `rec` via Z            | [recitation7.rkt](rec07/recitation7.rkt), [recitation7-interp.rkt](rec07/recitation7-interp.rkt)                 | [recitation7-solutions.rkt](rec07/recitation7-solutions.rkt), [recitation7-interp-solutions.rkt](rec07/recitation7-interp-solutions.rkt)   |
 | 8   | The lambda calculus: normal-order evaluation, Church booleans and numerals, Y         | [recitation8.rkt](rec08/recitation8.rkt)                                                                         | [recitation8-solutions.rkt](rec08/recitation8-solutions.rkt)                                                                                                                         |
 | 9   | CPS and defunctionalization: continuations as functions, then as data                 | [recitation9.rkt](rec09/recitation9.rkt)                                                                         | [recitation9-solutions.rkt](rec09/recitation9-solutions.rkt)                                                                                |
+| 10  | Effect handlers: handling, resuming, state, nondeterminism, combining handlers        | [recitation10.rkt](rec10/recitation10.rkt)                                                                       | _after recitation_                                                                                                                          |
 
 ## How these files work
 
@@ -55,7 +56,10 @@ solutions file).
    To check it worked, open [rec03/recitation3a.rkt](rec03/recitation3a.rkt) and press **Run**.
    If you see test failures that say `TODO`, you're set. If you see
    `collection not found`, the package isn't installed.
-5. For the Lean file in recitation 4, you don't need to install anything. Open
+5. For recitation 10, you'll also need `effect-racket`. Install it the same way: in DrRacket,
+   go to **File → Install Package…** and enter `effect-racket`, or run
+   `raco pkg install effect-racket`.
+6. For the Lean file in recitation 4, you don't need to install anything. Open
    [live.lean-lang.org](https://live.lean-lang.org/) in your browser and paste in the contents
    of [rec04/bexp.lean](rec04/bexp.lean). The panel on the right shows the output of `#eval`
    and the proof state as you move your cursor through the file.
